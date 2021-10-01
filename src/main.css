@@ -1,0 +1,137 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  background-image: url("./assets/background.jfif");
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 700px;
+}
+
+.Header__logo {
+  font-family: BirthstoneBounce-Regular;
+  font-size: 30px;
+  padding: 5px 30px;
+}
+
+.Header__link {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'BirthstoneBounce-Regular';
+  src: local("BirthstoneBounce"), url(./assets/BirthstoneBounce-Regular.ttf) format("truetype");
+}
+
+.Hamburger {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 19px;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .Hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    margin: 0 30px 0 auto;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    margin: 0 10px;
+    right: 0;
+  }
+}
+
+.Hamburger:hover {
+  cursor: pointer;
+}
+
+.Hamburger:hover .Hamburger__line {
+  background-color: #fbaa03;
+}
+
+.Hamburger__line {
+  position: relative;
+  height: 3px;
+  width: 30px;
+  background-color: #fff;
+}
+
+.Menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  display: flex;
+}
+
+.Menu--hidden {
+  right: -200px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .Menu {
+    position: fixed;
+    top: 51px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 200px;
+    height: auto;
+  }
+}
+
+.Menu__link {
+  padding: 13px 50px;
+}
+
+.Menu__link:hover {
+  cursor: pointer;
+  color: #fbaa03;
+}
+
+@media screen and (max-width: 768px) {
+  .Menu__link {
+    padding: 15px 0;
+    text-align: center;
+  }
+}
