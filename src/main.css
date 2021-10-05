@@ -25,6 +25,14 @@ code {
   margin-bottom: 700px;
 }
 
+@media screen and (max-width: 768px) {
+  .Header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .Header__logo {
   font-family: BirthstoneBounce-Regular;
   font-size: 30px;
@@ -134,4 +142,55 @@ code {
     padding: 15px 0;
     text-align: center;
   }
+}
+
+.Portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.Portfolio__image {
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 600px;
+}
+
+.Portfolio__title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.Portfolio__categories {
+  width: 600px;
+  margin: 0 auto 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Portfolio__category {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.cat-active {
+  color: green;
+  background-color: white;
 }
