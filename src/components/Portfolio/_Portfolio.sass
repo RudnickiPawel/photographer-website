@@ -5,10 +5,12 @@
   margin-bottom: 100px
   &__image
     width: auto
-    // height: auto
+    height: auto
     object-fit: contain
-    max-height: 600px
-    
+    max-height: 500px
+    // object-fit: cover
+    // height: 100%
+
   &__title
     text-align: center
     font-size: 30px
@@ -23,6 +25,22 @@
     display: inline-flex
     font-weight: 600
     font-size: 22px
+
+  .thumbs
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    transform: none !important
+  .thumbs-wrapper 
+    margin: 0 auto !important
+    .control-arrow
+      display: none
+  .thumb
+    .Portfolio__image
+      height: 80px
+      object-fit: cover
+  .slide
+    height: auto
 
 .cat-active
   color: green

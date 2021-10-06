@@ -2,6 +2,7 @@ import '../../main.css';
 import { useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+// import test from '../../assets/nature/big-imgs/green-lizard.jpg';
 
 const Portfolio = () => {
   const imagesNature = importAll(require.context('../../assets/nature', false, /\.(png|jpe?g|svg)$/));
@@ -20,29 +21,47 @@ const Portfolio = () => {
     setstate(currentImages);
     target.classList.add('cat-active');
   }
+  const showOnlySmall = (state) => {
+    if (state.includes('-small')) {
+      return state;
+    }
+  };
 
   return (
     <div className='Portfolio'>
       <div className="Portfolio__title">Portfolio</div>
       <div className="Portfolio__categories">
-        <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesNature) }}>nature</div>
+        <div className="Portfolio__category cat-active" onClick={(e) => { changeCategory(e.target, imagesNature) }}>nature</div>
         <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesPeople) }}>people</div>
         <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesFood) }}>food</div>
         <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesArchitecture) }}>architecture</div>
       </div>
-      <Carousel showThumbs={false} centerMode={true} centerSlidePercentage={100} infiniteLoop={true} useKeyboardArrows={true} emulateTouch={true} onClickItem={(index, item)=>{
-        
+      <Carousel dynamicHeight={true} showStatus={false} centerMode={true} centerSlidePercentage={100} infiniteLoop={true} useKeyboardArrows={true} emulateTouch={true} onClickItem={(index, item) => {
+        const currentCategory = document.querySelector('.cat-active').innerText;
+        console.log(currentCategory);
+        const imgName = item.key.replace('-small', '');
+        // console.log(item.key.replace('-small', ''));
+        // const clickedImage = require()
+        import('../../assets/' + currentCategory + '/' + imgName).then(image => {
+          // console.log(image.default);
+          window.open(image.default, '_blank').focus();
+        });
       }}>
-        {Object.keys(state).map((key, index) => {
-          return <div key={key}><img className='Portfolio__image' src={state[key].default} alt='' /></div>
-        })}
+        {
+
+          Object.keys(state).filter(showOnlySmall).map((key, index) => {
+            return <div key={key}><img className='Portfolio__image' src={state[key].default} alt='' /></div>
+          })}
       </Carousel>
-    </div>
+    </div >
   );
 
   function importAll(r) {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); return null; });
+    r.keys().map((item, index) => {
+      // console.log(item);
+      images[item.replace('./', '')] = r(item); return null;
+    });
     return images;
   }
 }
