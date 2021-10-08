@@ -27,7 +27,7 @@ code {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1000px;
+  margin-bottom: 60vw;
 }
 
 @media screen and (max-width: 768px) {
@@ -136,6 +136,8 @@ code {
 }
 
 .Menu__link {
+  text-decoration: none;
+  color: inherit;
   padding: 13px 50px;
 }
 
@@ -180,8 +182,9 @@ code {
 }
 
 .Portfolio__categories {
-  width: 600px;
-  margin: 0 auto 40px auto;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,6 +199,26 @@ code {
   display: inline-flex;
   font-weight: 600;
   font-size: 22px;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 420px) {
+  .Portfolio__category {
+    font-size: 15px;
+  }
+}
+
+.Portfolio__category:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Portfolio .control-prev:before {
+  border-right: 15px solid #000 !important;
+}
+
+.Portfolio .control-next:before {
+  border-left: 15px solid #000 !important;
 }
 
 .Portfolio .thumbs {
@@ -209,6 +232,7 @@ code {
       flex-wrap: wrap;
   -webkit-transform: none !important;
           transform: none !important;
+  padding: 0 !important;
 }
 
 .Portfolio .thumbs-wrapper {
@@ -219,10 +243,18 @@ code {
   display: none;
 }
 
+.Portfolio .thumb {
+  margin: 0 !important;
+}
+
 .Portfolio .thumb .Portfolio__image {
   height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.Portfolio .thumb:hover {
+  cursor: pointer;
 }
 
 .Portfolio .slide {
@@ -230,7 +262,15 @@ code {
   cursor: pointer;
 }
 
+.Portfolio .carousel-root {
+  padding-top: 40px;
+  background-color: #fff;
+}
+
 .cat-active {
-  color: green;
-  background-color: white;
+  color: #000;
+  background-color: #fff !important;
+  border-bottom: 1px solid #fff;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
 }

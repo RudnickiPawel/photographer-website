@@ -30,7 +30,7 @@ const Portfolio = () => {
   return (
     <div className='Portfolio'>
       <div className="Portfolio__title">Portfolio</div>
-      <div className="Portfolio__categories">
+      <div id='portfolio-cats' className="Portfolio__categories">
         <div className="Portfolio__category cat-active" onClick={(e) => { changeCategory(e.target, imagesNature) }}>nature</div>
         <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesPeople) }}>people</div>
         <div className="Portfolio__category" onClick={(e) => { changeCategory(e.target, imagesFood) }}>food</div>
