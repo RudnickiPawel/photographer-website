@@ -4,11 +4,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
   background-image: url("./assets/background.jfif");
-  background-size: cover;
-  background-position: 50% 0;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: #000;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url("./assets/background-mobile.jfif");
+  }
 }
 
 code {
@@ -22,7 +27,7 @@ code {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 700px;
+  margin-bottom: 1000px;
 }
 
 @media screen and (max-width: 768px) {
@@ -222,6 +227,7 @@ code {
 
 .Portfolio .slide {
   height: auto;
+  cursor: pointer;
 }
 
 .cat-active {
