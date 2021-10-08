@@ -93,14 +93,14 @@ code {
 }
 
 .Hamburger:hover .Hamburger__line {
-  background-color: #fbaa03;
+  background-color: #fff;
 }
 
 .Hamburger__line {
   position: relative;
   height: 3px;
   width: 30px;
-  background-color: #fff;
+  background-color: #fbaa03;
 }
 
 .Menu {
