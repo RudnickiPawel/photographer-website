@@ -1,17 +1,30 @@
 .Header
   display: flex
   align-items: center
-  margin-bottom: 60vw
+  flex-direction: column
+  overflow: hidden
   @media screen and ( max-width: 768px )
     justify-content: center
   &__logo
     font-family: BirthstoneBounce-Regular
     font-size: 30px
     padding: 5px 30px
+    z-index: 100
 
   &__link
     font-weight: 600
 
+  &__background
+    width: 100%
+    height: auto
+    position: relative
+    bottom: 100px
+    margin-bottom: -50px
+    @media screen and ( max-width: 768px )
+      object-fit: cover
+      height: 700px
+      width: auto
+      
 @font-face
   font-family: 'BirthstoneBounce-Regular'
   src: local('BirthstoneBounce'), url(./assets/BirthstoneBounce-Regular.ttf) format('truetype')
